@@ -1,0 +1,110 @@
+<div>
+  <section
+    class="contact_section layout_padding"
+    style="background-color: whitesmoke"
+  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="card px-4 mb-3">
+            <div class="table-responsive">
+              <table class="table" id="dataTable">
+                <thead>
+                  <tr>
+                    <th>Remove</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card px-4">
+            <p class="h8 py-3">Order Details</p>
+            <div class="row gx-3">
+              <div class="col-12">
+                <div class="row">
+                  <p class="h8 text mr-5 ml-3">Estimated Total</p>
+                  <span></span>
+                </div>
+              </div>
+              <div class="col-12">
+                <button
+                  class="btn mb-3"
+                  style="background-color: #10e7f4; color: white"
+                  onclick="orderAlert()"
+                >
+                  ORDER
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  function orderAlert() {
+    alert("Order placed successfully!");
+    window.location.href = "#home";
+  }
+</script>
+
+<script>
+  let cartData = null; // Define cartData in the global scope
+
+  async function fetchCartData() {
+    try {
+      let response = await fetch("/web2024/json/cart.json"); // Specify the path to your cart.json file
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      cartData = await response.json();
+      cartData.cart.forEach((item) => (item.selected = true)); // Add selected property to each item
+      updateTable(cartData.cart);
+      calculateTotal(cartData.cart);
+    } catch (error) {
+      console.error("Fetch error: ", error);
+    }
+  }
+
+  function updateTable(cartData) {
+    let tableBody = document.querySelector("#dataTable tbody");
+    tableBody.innerHTML = ""; // Clear current table rows
+
+    cartData.forEach((item, index) => {
+      let row = document.createElement("tr");
+      row.innerHTML = `
+          <td><input type="checkbox" aria-label="Select item" checked onchange="itemSelected(${index})"></td>
+          <td>${item.name}</td>
+          <td><input type="number" class="form-control" value="${item.quantity}" style="width: 100px" onchange="updateQuantity(${index}, this.value)" /></td>
+          <td>$${item.price}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  function itemSelected(index) {
+    cartData.cart[index].selected = !cartData.cart[index].selected;
+    calculateTotal(cartData.cart);
+  }
+
+  function updateQuantity(index, quantity) {
+    cartData.cart[index].quantity = Number(quantity);
+    calculateTotal(cartData.cart);
+  }
+
+  function calculateTotal(cartData) {
+    let total = cartData
+      .filter((item) => item.selected) // Only include selected items
+      .reduce((acc, item) => acc + item.quantity * item.price, 0);
+    document.querySelector(".row .text + span").textContent = `$${total}`;
+  }
+
+  // Call the fetchCartData function when the window loads
+  window.onload = fetchCartData;
+</script>

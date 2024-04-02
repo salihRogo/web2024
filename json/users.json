@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Lucas Paqueta",
+      "email": "lucas.paqeta@example.com",
+      "address": "East London 10, Anywhere, England"
+    },
+    {
+      "id": "2",
+      "fullName": "John Smith",
+      "email": "john.smith@example.com",
+      "address": "123 Main St, Anytown, USA"
+    },
+    {
+      "id": "3",
+      "fullName": "Maria Garcia",
+      "email": "maria.garcia@example.com",
+      "address": "456 Elm St, Somewhere, USA"
+    },
+    {
+      "id": "4",
+      "fullName": "Sara Johnson",
+      "email": "sara.johnson@example.com",
+      "address": "789 Oak St, Anywhere, USA"
+    },
+    {
+      "id": "5",
+      "fullName": "Ahmed Hassan",
+      "email": "ahmed.hassan@example.com",
+      "address": "1011 Pine St, Nowhere, USA"
+    },
+    {
+      "id": "6",
+      "fullName": "Sophie Martin",
+      "email": "sophie.martin@example.com",
+      "address": "1315 Maple St, Everywhere, USA"
+    },
+    {
+      "id": "7",
+      "fullName": "David Brown",
+      "email": "david.brown@example.com",
+      "address": "1719 Cedar St, Nowhereland, USA"
+    },
+    {
+      "id": "8",
+      "fullName": "Anna White",
+      "email": "anna.white@example.com",
+      "address": "2023 Birch St, Someplace, USA"
+    },
+    {
+      "id": "9",
+      "fullName": "Mohammed Ali",
+      "email": "mohammed.ali@example.com",
+      "address": "2327 Spruce St, Anywhereelse, USA"
+    },
+    {
+      "id": "10",
+      "fullName": "Emma Wilson",
+      "email": "emma.wilson@example.com",
+      "address": "2629 Oak St, Anyplace, USA"
+    }
+  ]
+}

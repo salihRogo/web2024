@@ -394,10 +394,10 @@ a:focus {
   flex-direction: column;
   align-items: center;
   width: 300px;
+  background-color: #f8f8f8;
   height: 360px;
   justify-content: space-between;
-  border: 1px solid #a6a6a6;
-  margin: 20px 0;
+  margin: 40px 0;
   font-family: "Roboto", sans-serif;
 }
 .health_section .box .img-box img {
@@ -608,61 +608,39 @@ a:focus {
   margin-top: 25px;
 }
 
-.info_section {
+.footer_section {
   background-color: #121111;
   color: #ffffff;
 }
-.info_section h4 {
+.footer_section h4 {
   text-transform: uppercase;
   font-weight: bold;
 }
-.info_section .info_contact .box {
+.footer_section .footer_contact .box {
   margin: 10px 0;
   display: flex;
 }
-.info_section .info_contact .box .img-box {
+.footer_section .footer_contact .box .img-box {
   margin-right: 15px;
 }
-.info_section .info_contact .box .img-box img {
+.footer_section .footer_contact .box .img-box img {
   width: 25px;
 }
-.info_section .info_menu .navbar-nav .nav-item .nav-link {
+.footer_section .footer_menu .navbar-nav .nav-item .nav-link {
   color: #ffffff;
 }
-.info_section .info_news form input {
+.footer_section .footer_news form input {
   width: 100%;
   padding: 3px 10px;
 }
-.info_section .info_news form button {
+.footer_section .footer_news form button {
   display: inline-block;
   padding: 7px 60px;
   background-color: #10e7f4;
   border: 1px solid #10e7f4;
   color: #ffffff;
 }
-.info_section .info_news form button:hover {
+.footer_section .footer_news form button:hover {
   background-color: transparent;
   color: #10e7f4;
-}
-
-/* footer section*/
-.footer_section {
-  background-color: #121111;
-  font-weight: 500;
-}
-
-.footer_section p {
-  color: #fbfcfd;
-  margin: 0;
-  text-align: center;
-  padding: 20px;
-  border-top: 1px solid #9b9b9b;
-  width: 65%;
-  margin: 0 auto;
-}
-
-.footer_section a {
-  color: #fbfcfd;
-}
-
-/* end footer section*//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
