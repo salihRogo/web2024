@@ -1,0 +1,52 @@
+{
+  "vitaminsAndSuplements": [
+    {
+      "id": "1",
+      "name": "Cigarettum",
+      "picture": "images/p-5.png",
+      "price": "50"
+    },
+    {
+      "id": "2",
+      "name": "Womenius",
+      "picture": "images/p-6.png",
+      "price": "50"
+    },
+    {
+      "id": "3",
+      "name": "Menius",
+      "picture": "images/p-5.png",
+      "price": "70"
+    },
+    {
+      "id": "4",
+      "name": "Bilbaus",
+      "picture": "images/p-6.png",
+      "price": "30"
+    },
+    {
+      "id": "5",
+      "name": "Wheyius",
+      "picture": "images/p-5.png",
+      "price": "50"
+    },
+    {
+      "id": "6",
+      "name": "Earthonium",
+      "picture": "images/p-6.png",
+      "price": "70"
+    },
+    {
+      "id": "7",
+      "name": "Bombastic",
+      "picture": "images/p-5.png",
+      "price": "60"
+    },
+    {
+      "id": "8",
+      "name": "Bestday",
+      "picture": "images/p-6.png",
+      "price": "100"
+    }
+  ]
+}
