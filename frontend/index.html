@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>eMedicine</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../project/frontend/assets/img/favicon.ico"
+    />
+
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <link href="./assets/css/spapp.css" rel="stylesheet" />
+    <link href="./assets/css/spinkit.css" rel="stylesheet" />
+    <link href="./assets/css/toastr.min.css" rel="stylesheet" />
+    <link href="./assets/css/dataTables-latest.css" rel="stylesheet" />
+    <script src="./assets/js/fontawesome.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="#home">eMedical</a>
+      <!-- Sidebar Toggle-->
+      <button
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+        href="#!"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar-->
+      <div
+        class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
+      >
+        <a href="#cart" class="nav-link" style="color: #9c9d9f" role="button">
+          <i class="fa fa-cart-shopping"></i>
+        </a>
+      </div>
+    </nav>
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <a class="nav-link" href="#home"> Home </a>
+            </div>
+            <div class="nav">
+              <a class="nav-link" href="#products"> Products </a>
+            </div>
+            <div class="nav">
+              <a class="nav-link" href="#profile"> Profile </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div id="layoutSidenav_content">
+        <main id="spapp" role="main">
+          <section
+            id="admin-dashboard"
+            data-load="admin_dashboard.html"
+          ></section>
+          <section id="register" data-load="register.html"></section>
+          <section id="login" data-load="login.html"></section>
+          <section id="password" data-load="password.html"></section>
+          <section id="home" data-load="home.html"></section>
+          <section id="products" data-load="products.html"></section>
+          <section id="profile" data-load="profile.html"></section>
+          <section id="cart" data-load="cart.html"></section>
+          <section id="checkout" data-load="checkout.html"></section>
+          <section id="product" data-load="single_product.html"></section>
+        </main>
+
+        <footer class="bg-body-tertiary" style="background-color: #9ec5fe">
+          <div class="container p-4 pb-0 text-center">
+            <form action="">
+              <div
+                class="d-flex flex-column align-items-center justify-content-center"
+              >
+                <div class="col-md-6">
+                  <p class="pt-2">
+                    <strong>Sign up for our newsletter</strong>
+                  </p>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputName1"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <button
+                    data-mdb-ripple-init
+                    type="submit"
+                    class="btn btn-primary mb-4"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            class="text-center p-3"
+            style="background-color: rgba(0, 0, 0, 0.05)"
+          >
+            © 2024 Copyright:
+            <a
+              class="text-decoration-none text-dark"
+              href="https://www.github.com/salihRogo/"
+              target="_blank"
+              >salkan</a
+            >
+          </div>
+          <!-- Copyright -->
+          
+      </div>
+    </div>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.7.1-latest.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/jquery.spapp.min.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/block-ui.js"></script>
+    <!-- <script src="./assets/js/toastr.min.js"></script> -->
+    <script src="./assets/js/dataTables-latest.js"></script>
+
+    <script src="./utils/utils.js"></script>
+    <script src="./utils/constants.js"></script>
+    <script src="./utils/form_validation.js"></script>
+    <script src="./utils/rest_client.js"></script>
+    <script src="./services/script.js"></script>
+  </body>
+</html>
