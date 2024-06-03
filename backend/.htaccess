@@ -2,3 +2,8 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+Header always set Access-Control-Allow-Origin "https://squid-app-dksi9.ondigitalocean.app/backend/"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type,Authorization, Accept"
+Header always set Access-Control-Allow-Credentials "true"
