@@ -39,31 +39,60 @@
   <h2 class="text-center text-uppercase mb-5">Request A Call Back</h2>
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form>
+      <form name="contact-form" id="contact-form" validate="validate">
         <div class="mb-3">
-          <label for="exampleInputName1" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="exampleInputName1" />
+          <label for="full_name" class="form-label">Full Name</label>
+          <input
+            id="full_name"
+            name="full_name"
+            type="text"
+            class="form-control"
+            required="required"
+            data-validation-required-message="Please enter your name"
+          />
         </div>
         <div class="mb-3">
-          <label for="exampleInputNumber1" class="form-label"
-            >Phone Number</label
-          >
-          <input type="text" class="form-control" id="exampleInputNumber1" />
+          <label for="phone_number" class="form-label">Phone Number</label>
+          <input
+            id="phone_number"
+            name="phone_number"
+            type="text"
+            class="form-control"
+            required="required"
+            data-validation-required-message="Please enter your phone number"
+          />
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" />
+          <label for="medicine" class="form-label">Medicine</label>
+          <input
+            type="text"
+            class="form-control"
+            id="medicine"
+            name="medicine"
+            required="required"
+            data-validation-required-message="Please enter the medicine"
+          />
         </div>
         <div class="mb-3">
-          <label for="exampleInputMedicine1" class="form-label">Medicine</label>
-          <input type="text" class="form-control" id="exampleInputMedicine1" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputMessage" class="form-label">Message</label>
-          <input type="text" class="form-control" id="exampleInputMessage" />
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            class="form-control"
+            rows="5"
+            required="required"
+            data-validation-required-message="Please enter your message"
+          ></textarea>
         </div>
         <div class="mb-3 d-grid">
-          <button type="submit" class="btn btn-primary mx-auto">Send</button>
+          <button
+            id="sendMessageButton"
+            type="submit"
+            class="btn btn-primary mx-auto"
+            onclick="initContactForm('contact-form')"
+          >
+            Send
+          </button>
         </div>
       </form>
     </div>

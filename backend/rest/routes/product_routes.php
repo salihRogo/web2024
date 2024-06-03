@@ -10,3 +10,8 @@ Flight::route('GET /products', function() {
         $data
     );
 });
+
+Flight::route('GET /products/@product_id', function($product_id) {
+    $product = Flight::get('products_service')->get_product_by_id($product_id);
+    Flight::json($product);
+});

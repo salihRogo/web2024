@@ -7,17 +7,20 @@
             <h5 class="mb-0">Checkout Form</h5>
           </div>
           <div class="card-body">
-            <form>
+            <form name="checkout-form" id="checkout-form" validate="validate">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-12 col-md-6 mb-4">
                   <div class="form-outline">
                     <input
+                      id="first_name"
+                      name="first_name"
                       type="text"
-                      id="form6Example1"
                       class="form-control"
+                      required="required"
+                      data-validation-required-message="Please enter your first name"
                     />
-                    <label class="form-label" for="form6Example1"
+                    <label class="form-label" for="first_name"
                       >First name</label
                     >
                   </div>
@@ -25,58 +28,77 @@
                 <div class="col-12 col-md-6 mb-4">
                   <div class="form-outline">
                     <input
+                      id="last_name"
+                      name="last_name"
                       type="text"
-                      id="form6Example2"
                       class="form-control"
+                      required="required"
+                      data-validation-required-message="Please enter your last name"
                     />
-                    <label class="form-label" for="form6Example2"
-                      >Last name</label
-                    >
+                    <label class="form-label" for="last_name">Last name</label>
                   </div>
                 </div>
               </div>
 
               <!-- Text input -->
               <div class="form-outline mb-4">
-                <input type="text" id="form6Example4" class="form-control" />
-                <label class="form-label" for="form6Example4">Address</label>
+                <input
+                  id="address"
+                  name="address"
+                  type="text"
+                  class="form-control"
+                  required="required"
+                  data-validation-required-message="Please enter your address"
+                />
+                <label class="form-label" for="address">Address</label>
               </div>
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form6Example5" class="form-control" />
-                <label class="form-label" for="form6Example5">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  required="required"
+                  data-validation-required-message="Please enter your email address"
+                />
+                <label class="form-label" for="email">Email</label>
               </div>
 
               <!-- Number input -->
               <div class="form-outline mb-4">
-                <input type="text" id="form6Example6" class="form-control" />
-                <label class="form-label" for="form6Example6">Phone</label>
+                <input
+                  id="phone_number"
+                  name="phone_number"
+                  type="text"
+                  class="form-control"
+                  required="required"
+                  data-validation-required-message="Please enter your phone number"
+                />
+                <label class="form-label" for="phone_number">Phone</label>
               </div>
 
               <!-- Message input -->
               <div class="form-outline mb-4">
                 <textarea
                   class="form-control"
-                  id="form6Example7"
+                  id="additional_info"
+                  name="additional_info"
                   rows="4"
                 ></textarea>
-                <label class="form-label" for="form6Example7"
+                <label class="form-label" for="additional_info"
                   >Additional information</label
                 >
               </div>
 
               <!-- Submit button -->
 
-              <!-- This button should trigger modal where confirmation question will be raised,
-                    and additional button which will close modal, order is placed and stored in 
-                    orders table in database, toastr success is shown in top right corner,
-                    and home is displayed once again.  -->
-
               <button
+                id="place-order-button"
                 type="submit"
                 class="btn btn-primary btn-rounded btn-block"
-                onclick=""
+                onclick="initCheckoutForm('checkout-form')"
               >
                 Place order
               </button>
@@ -95,13 +117,13 @@
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
               >
                 Products
-                <span>$53.98</span>
+                <span>$<span id="expected-amount-in-checkout"></span></span>
               </li>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center px-0"
               >
                 Shipping
-                <span>Gratis</span>
+                <span>Free shipping</span>
               </li>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3"
@@ -109,7 +131,9 @@
                 <div>
                   <strong>Total amount</strong>
                 </div>
-                <span><strong>$53.98</strong></span>
+                <span
+                  ><strong>$</strong><strong id="total-amount"></strong
+                ></span>
               </li>
             </ul>
           </div>
@@ -117,7 +141,11 @@
         <div class="card mb-4">
           <div class="card-body">
             <p><strong>Expected shipping delivery</strong></p>
-            <p class="mb-0">12.10.2020 - 14.10.2020</p>
+            <span
+              ><span id="expected-delivery-start"></span>
+              -
+              <span id="expected-delivery-end"></span
+            ></span>
           </div>
         </div>
       </div>

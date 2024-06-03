@@ -11,4 +11,13 @@ class ProductDao extends BaseDao {
     {
         return $this->query("SELECT * FROM products", []);
     }
+
+    public function get_product_by_id($product_id){
+        return $this->query_unique(
+            "SELECT * FROM products WHERE id = :id", 
+            [
+                'id' => $product_id
+            ]
+        );
+    }
 }
