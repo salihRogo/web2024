@@ -45,7 +45,7 @@
 
         $token = JWT::encode(
             $jwt_payload,
-            JWT_SECRET,
+            Config::JWT_SECRET(),
             'HS256'
         );
 
