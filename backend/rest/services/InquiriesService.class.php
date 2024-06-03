@@ -8,8 +8,7 @@ class InquiriesService {
         $this->inquiries_dao = new InquiriesDao();
     }
 
-    public function add_inquiries($payload)
-    {
+    public function add_inquiries($payload) {
         return $this->inquiries_dao->add_inquiries($payload);
     }
 }

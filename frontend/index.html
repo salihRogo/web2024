@@ -59,6 +59,12 @@
             <div class="nav">
               <a class="nav-link" href="#profile"> Profile </a>
             </div>
+            <div class="nav">
+              <a class="nav-link" href="#login"> Login </a>
+            </div>
+            <div class="nav">
+              <a class="nav-link" href="#logout"> Logout </a>
+            </div>
           </div>
         </nav>
       </div>
@@ -76,12 +82,20 @@
           <section id="profile" data-load="profile.html"></section>
           <section id="cart" data-load="cart.html"></section>
           <section id="checkout" data-load="checkout.html"></section>
-          <section id="product" data-load="single_product.html"></section>
+          <section id="logout" data-load="logout.html"></section>
+          <section
+            id="single_product"
+            data-load="single_product.html"
+          ></section>
         </main>
 
         <footer class="bg-body-tertiary" style="background-color: #9ec5fe">
           <div class="container p-4 pb-0 text-center">
-            <form action="">
+            <form
+              name="newsletter-form"
+              id="newsletter-form"
+              validate="validate"
+            >
               <div
                 class="d-flex flex-column align-items-center justify-content-center"
               >
@@ -92,16 +106,22 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <input
+                    id="email"
+                    name="email"
                     type="email"
                     class="form-control"
-                    id="exampleInputName1"
+                    required="required"
+                    data-validation-required-message="Please enter your email address"
+                    autocomplete="on"
                   />
                 </div>
                 <div class="col-md-6">
                   <button
+                    id="submit-newsletter-form"
                     data-mdb-ripple-init
                     type="submit"
                     class="btn btn-primary mb-4"
+                    onclick="validateNewsletter()"
                   >
                     Subscribe
                   </button>
@@ -122,7 +142,7 @@
             >
           </div>
           <!-- Copyright -->
-          
+        </footer>
       </div>
     </div>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
@@ -131,7 +151,7 @@
     <script src="./assets/js/jquery.spapp.min.js"></script>
     <script src="./assets/js/scripts.js"></script>
     <script src="./assets/js/block-ui.js"></script>
-    <!-- <script src="./assets/js/toastr.min.js"></script> -->
+    <script src="./assets/js/toastr.min.js"></script>
     <script src="./assets/js/dataTables-latest.js"></script>
 
     <script src="./utils/utils.js"></script>
@@ -139,5 +159,31 @@
     <script src="./utils/form_validation.js"></script>
     <script src="./utils/rest_client.js"></script>
     <script src="./services/script.js"></script>
+    <script>
+      function validateNewsletter() {
+        var user_id = localStorage.getItem("user_id");
+        FormValidation.validate("newsletter-form", {}, function (data) {
+          data["user_id"] = user_id;
+          console.log(data);
+          Utils.block_ui("#submit-newsletter-form");
+          RestClient.post(
+            "newsletter",
+            data,
+            function (response) {
+              Utils.unblock_ui("#submit-newsletter-form");
+              document.getElementById("newsletter-form").reset();
+              toastr.success(
+                "You have successfully subscribed for our newsletter."
+              );
+            },
+            function (xhr) {
+              toastr.error(
+                "An error occurred while subscribing for newsletter."
+              );
+            }
+          );
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,59 +1,87 @@
-<section style="border-color: #0d6efd">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-6 mb-4 mb-lg-0">
-        <div class="card mb-3" style="border-radius: 0.5rem">
-          <div class="row g-0">
-            <div
-              class="col-md-4 gradient-custom text-center text-white"
-              style="
-                border-top-left-radius: 0.5rem;
-                border-bottom-left-radius: 0.5rem;
-              "
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                alt="Avatar"
-                class="img-fluid my-5"
-                style="width: 80px"
-              />
-              <h5 style="color: #0d6efd">Marie Horwitz</h5>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body p-4">
-                <h6>Information</h6>
-                <hr class="mt-0 mb-4" />
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Email</h6>
-                    <p class="text-muted">info@example.com</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Phone</h6>
-                    <p class="text-muted">123 456 789</p>
-                  </div>
-                </div>
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Recent</h6>
-                    <p class="text-muted">Lorem ipsum</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Most Viewed</h6>
-                    <p class="text-muted">Dolor sit amet</p>
-                  </div>
-                </div>
-                <h6>Forgot your password?</h6>
-                <hr class="mt-0 mb-4" />
-                <div class="col-6 mb-3">
-                  <h6>Recover your password</h6>
-                  <a href="#password">Here! </a>
-                </div>
-              </div>
-            </div>
+<div class="container rounded bg-white mt-5 mb-5">
+  <h4 class="text-center mb-3">Profile Settings</h4>
+  <div class="row">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img
+          class="rounded-circle mt-5"
+          width="150px"
+          src="../../../project/frontend/assets/img/user-image.jpeg"
+          alt="Avatar"
+        />
+      </div>
+    </div>
+    <!-- Personal Information Form -->
+    <div class="col-md-9 border-right">
+      <div class="p-4 py-5">
+        <form id="personal-info-form">
+          <div class="form-group">
+            <label class="labels">First Name</label>
+            <input
+              id="first_name"
+              name="first_name"
+              type="text"
+              class="form-control"
+            />
           </div>
-        </div>
+          <div class="form-group">
+            <label class="labels">Last Name</label>
+            <input
+              id="last_name"
+              name="last_name"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="labels">Mobile Number</label>
+            <input
+              id="phone"
+              name="mobile_number"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="labels">Address Line 1</label>
+            <input
+              id="addressLine1"
+              name="address_line1"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="labels">Address Line 2</label>
+            <input
+              id="addressLine2"
+              name="address_line2"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label class="labels">City</label>
+            <input id="city" name="city" type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label class="labels">Zip Code</label>
+            <input
+              id="zipCode"
+              name="zip_code"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <button
+            id="address-button"
+            class="btn btn-primary profile-button"
+            type="submit"
+          >
+            Update Contact Information
+          </button>
+        </form>
       </div>
     </div>
   </div>
-</section>
+</div>

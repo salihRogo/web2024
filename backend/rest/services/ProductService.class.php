@@ -12,4 +12,8 @@ class ProductService {
     {
         return $this->product_dao->get_products();
     }
+
+    public function get_product_by_id($product_id) {
+        return $this->product_dao->get_product_by_id($product_id);
+    }
 }

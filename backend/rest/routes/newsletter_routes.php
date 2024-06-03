@@ -3,9 +3,10 @@ require_once __DIR__ . '/../services/NewsletterService.class.php';
 
 Flight::set('newsletter_service', new NewsletterService());
 
-Flight::route('GET /newsletters', function() {
-    $data = Flight::get('cart_service')->get_newsletters();
+Flight::route('POST /newsletter', function () {
+    $data = Flight::request()->data->getData();
+    $newsletter = Flight::get('newsletter_service')->add_newsletters($data);
     Flight::json(
-        $data
+        $newsletter
     );
 });

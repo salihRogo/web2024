@@ -8,7 +8,7 @@ class InquiriesDao extends BaseDao {
     }
 
     public function add_inquiries($payload)
-    {
+    { 
         return $this->insert("inquiries", $payload);
     }
 }
