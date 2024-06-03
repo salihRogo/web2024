@@ -1,3 +1,14 @@
+$(document).ready(function () {
+  const currentUser = window.localStorage.getItem("user");
+  if (currentUser) {
+    $("#login-link").addClass("d-none");
+    $("#logout-link").removeClass("d-none");
+    $("#profile-link").removeClass("d-none");
+    $("#product-link").removeClass("d-none");
+    $("#cart-link").removeClass("d-none");
+  }
+});
+
 var app = $.spapp({
   defaultView: "#home",
   templateDir: "../frontend/pages/",
@@ -108,6 +119,7 @@ loginForm = function () {
       function (response) {
         window.localStorage.setItem("token", response.token);
         window.localStorage.setItem("user_id", response.id);
+        window.localStorage.setItem("user", response.first_name);
         Utils.unblock_ui("login-button");
         toastr.success("You logged in successfully.");
         window.location.hash = "#home";
