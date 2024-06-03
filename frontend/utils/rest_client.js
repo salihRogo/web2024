@@ -2,7 +2,7 @@ var RestClient = {
   get: function (url, callback, error_callback) {
     let token = localStorage.getItem("token");
     $.ajax({
-      url: Constants.API_BASE_URL + url,
+      url: Constants.get_api_base_url() + url,
       type: "GET",
       headers: {
         Authentication: token,
@@ -18,7 +18,7 @@ var RestClient = {
   request: function (url, method, data, callback, error_callback) {
     let token = localStorage.getItem("token");
     $.ajax({
-      url: Constants.API_BASE_URL + url,
+      url: Constants.get_api_base_url() + url,
       type: method,
       headers: {
         Authentication: token,
