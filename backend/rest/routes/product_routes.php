@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../services/ProductService.class.php';
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 Flight::set('products_service', new ProductService());
 
 /**
