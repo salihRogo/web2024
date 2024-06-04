@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../services/OrderService.class.php';
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 Flight::set('order_service', new OrderService());
 
 /**

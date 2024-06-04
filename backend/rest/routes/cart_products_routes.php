@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/../services/CartProductsService.class.php';
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 Flight::set('cart_products_service', new CartProductsService());
 
 /**

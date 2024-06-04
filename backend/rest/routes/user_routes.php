@@ -1,6 +1,9 @@
 <?php
     require_once __DIR__ . '/../services/UserService.class.php';
 
+    use Firebase\JWT\JWT;
+    use Firebase\JWT\Key;
+
     Flight::set('users_service', new UserService());
 
     /**
