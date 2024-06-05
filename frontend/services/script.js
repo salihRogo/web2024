@@ -403,7 +403,7 @@ display_user_profile = function (user_id) {
     "
   >
     <img
-      src="/../../../project/frontend/assets/img/user-image.jpeg"
+      src="/../../frontend/assets/img/user-image.jpeg"
       alt="Avatar"
       class="img-fluid my-4"
       style="width: 80px"
