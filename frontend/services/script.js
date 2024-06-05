@@ -158,7 +158,7 @@ getCartProducts = function (cart_id) {
           data-mdb-ripple-color="light"
         >
           <img
-            src="/../../../project/frontend/assets/img/${product.image}.webp"
+            src="/../../frontend/assets/img/${product.image}.webp"
             class="w-100"
             alt="Product image"
           />
