@@ -1,4 +1,4 @@
-$(document).ready(function () {
+dNoneAddRemove = function () {
   const currentUser = window.localStorage.getItem("user");
   if (currentUser) {
     $("#login-link").addClass("d-none");
@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#product-link").removeClass("d-none");
     $("#cart-link").removeClass("d-none");
   }
-});
+};
 
 var app = $.spapp({
   defaultView: "#home",
@@ -31,6 +31,7 @@ app.route({
         })
         .catch((error) => console.error(error.message));
     }
+    dNoneAddRemove();
   },
 });
 
@@ -47,9 +48,7 @@ initContactForm = function (formId) {
         document.getElementById(formId).reset();
         toastr.success("Your response is recorded.");
       },
-      function (xhr) {
-        toastr.error("Error occurred while sending the message.");
-      }
+      function (xhr) {}
     );
   });
 };
@@ -59,9 +58,7 @@ initialiseEmptyCart = function (id) {
     "carts",
     { user_id: id },
     function () {},
-    function (xhr) {
-      toastr.error("Error occurred while creating cart.");
-    }
+    function (xhr) {}
   );
 };
 
@@ -136,6 +133,7 @@ app.route({
   load: "cart.html",
   onCreate: function () {},
   onReady: function () {
+    dNoneAddRemove();
     var cart_id = localStorage.getItem("cart_id");
     console.log("cart_id in cart.html from localstorage: " + cart_id);
     getCartProducts(cart_id);
@@ -258,6 +256,7 @@ app.route({
   load: "checkout.html",
   onCreate: function () {},
   onReady: function () {
+    dNoneAddRemove();
     var cart_id = localStorage.getItem("cart_id");
     calculateAmount("expected-amount-in-checkout", cart_id);
     insertExpectedDeliveryDate();
@@ -309,6 +308,7 @@ app.route({
   load: "products.html",
   onCreate: function () {},
   onReady: function () {
+    dNoneAddRemove();
     get_products();
   },
 });
@@ -317,7 +317,9 @@ app.route({
   view: "single_product",
   load: "single_product.html",
   onCreate: function () {},
-  onReady: function () {},
+  onReady: function () {
+    dNoneAddRemove();
+  },
 });
 
 app.route({
@@ -337,7 +339,7 @@ app.route({
   load: "profile.html",
   onCreate: function () {},
   onReady: function () {
-    console.log("Account is ready!");
+    dNoneAddRemove();
     RestClient.get("users/current", function (data) {
       console.log("Current user: ", data);
       $("#first_name").val(data.first_name);
@@ -463,7 +465,7 @@ display_product = function (product_id) {
     <div class="col-md-6">
       <img
         class="card-img-top mb-5 mb-md-0"
-        src="/../../../project/frontend/assets/img/${product.image}.webp"
+        src="/../../frontend/assets/img/${product.image}.webp"
         alt="Ma kakva sliba"
       />
     </div>
